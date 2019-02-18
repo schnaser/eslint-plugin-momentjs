@@ -1,8 +1,10 @@
 {
   "name": "eslint-plugin-moment",
   "version": "1.0.0",
-  "description": "ESLint rule plugin to enforce moment.js standards",
+  "description": "ESLint rule plugin to enforce moment.js style",
   "main": "lib/index.js",
+  "author": "Mike Schnaser <mike@schnaser.com>",
+  "license": "MIT",
   "directories": {
     "doc": "docs",
     "lib": "lib",
@@ -11,7 +13,6 @@
   "scripts": {
     "test": "node tests/lib/rules/*"
   },
-  "author": "Mike Schnaser",
   "devDependencies": {
     "eslint": "^5.11.1"
   }
