@@ -68,6 +68,7 @@ ruleTester.run("require-strict-parsing", rule, {
             ]
         },
         {
+            // No support for variables as strict parsing flag. Pass in `true` explicitly.
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', MY_VARIABLE, MY_TIME_ZONE);",
             errors: [
                 {
