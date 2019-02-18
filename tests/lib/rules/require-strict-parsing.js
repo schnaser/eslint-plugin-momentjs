@@ -26,6 +26,9 @@ ruleTester.run("require-strict-parsing", rule, {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true);"
         },
         {
+            code: "moment.tz(aDateStringVariable, aFormatVariable, true);"
+        },
+        {
             code: "moment.tz(timezone);"
         }
     ],
