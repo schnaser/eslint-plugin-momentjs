@@ -14,7 +14,7 @@ Install [ESLint](http://eslint.org/) if you haven't already. ESLint installation
 
 Install eslint-plugin-moment.
 
-    npm i eslint-plugin-moment
+    npm i eslint-plugin-moment --save-dev
 
 Add the plugin to your `.eslintrc` configuration.
 

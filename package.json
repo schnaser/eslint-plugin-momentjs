@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-moment",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint rule plugin to enforce moment.js style",
   "main": "lib/index.js",
   "author": "Mike Schnaser <mike@schnaser.com>",
