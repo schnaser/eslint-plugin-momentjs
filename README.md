@@ -27,7 +27,8 @@ Add the plugin to your `.eslintrc` configuration.
 Configure the rules. [More information](https://eslint.org/docs/user-guide/configuring#configuring-rules)
 
     "rules": {
-        "moment/no-moment-constructor": "warn",
+        "moment/some-rule": "warn",
+        "moment/some-other-rule": "error",
         ...
     }
     
