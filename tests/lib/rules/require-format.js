@@ -39,8 +39,18 @@ ruleTester.run("require-format", rule, {
         {
             code: "moment('01/12/2018', DATE_FORMAT);"
         },
-
-        // Constructing "now"
+        {
+            code: "moment('01/12/2018', some.really().complicated.call);"
+        },
+        {
+            code: "moment.utc('01/12/2018', 'MM/DD/YYYY', true);"
+        },
+        {
+            code: "moment.utc('01/12/2018', 'MM/DD/YYYY');"
+        },
+        {
+            code: "moment.utc('01/12/2018', DATE_FORMAT);"
+        },
         {
             code: "moment.tz(MY_TIME_ZONE);"
         },
@@ -79,12 +89,21 @@ ruleTester.run("require-format", rule, {
         },
         {
             code: "moment.tz(SomeObject.getTimeZoneForUser());"
-        }
+        },
+        {
+            code: "moment.utc();"
+        },
+        {
+            code: "moment.utc(string, format);"
+        },
+        {
+            code: "moment(string, format);"
+        },
     ],
 
     invalid: [
         {
-            code: "moment.tz('01/12/2018');",
+            code: "moment.tz('01/12/2018', true);",
             errors: [
                 {
                     message: MESSAGE,
@@ -93,7 +112,7 @@ ruleTester.run("require-format", rule, {
             ]
         },
         {
-            code: "moment.tz(foo);",
+            code: "moment.tz(foo, false);",
             errors: [
                 {
                     message: MESSAGE,
@@ -102,16 +121,7 @@ ruleTester.run("require-format", rule, {
             ]
         },
         {
-            code: "moment.tz(foo());",
-            errors: [
-                {
-                    message: MESSAGE,
-                    type: "CallExpression"
-                }
-            ]
-        },
-        {
-            code: "moment('01/12/2018');",
+            code: "moment.tz(foo(), false);",
             errors: [
                 {
                     message: MESSAGE,
@@ -138,7 +148,16 @@ ruleTester.run("require-format", rule, {
             ]
         },
         {
-            code: "moment.tz(a.b().c().d.e.f().g);",
+            code: "moment.utc(foo);",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment.utc(foo());",
             errors: [
                 {
                     message: MESSAGE,
