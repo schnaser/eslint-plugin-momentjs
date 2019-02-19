@@ -23,16 +23,10 @@ ruleTester.run("require-strict-parsing", rule, {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true, MY_TIME_ZONE);"
         },
         {
-            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true);"
-        },
-        {
-            code: "moment.tz(aDateStringVariable, aFormatVariable, true);"
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true, 'America/Chicago');"
         },
         {
             code: "moment.tz(timezone);"
-        },
-        {
-            code: "moment('01/12/2018', 'MM/DD/YYYY', true, MY_TIME_ZONE);"
         },
         {
             code: "moment('01/12/2018', 'MM/DD/YYYY', true);"
@@ -41,13 +35,31 @@ ruleTester.run("require-strict-parsing", rule, {
             code: "moment(aDateStringVariable, aFormatVariable, true);"
         },
         {
-            code: "moment(timezone);"
-        }
+            code: "moment.utc('01/12/2018', 'MM/DD/YYYY', 'en', true);"
+        },
+        {
+            code: "moment.utc('01/12/2018', 'MM/DD/YYYY', true);"
+        },
+        {
+            code: "moment.utc();"
+        },
+        {
+            code: "moment();"
+        },
     ],
 
     invalid: [
         {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', false, MY_TIME_ZONE);",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', SOME_TRUE_CONSTANT, MY_TIME_ZONE);",
             errors: [
                 {
                     message: MESSAGE,
@@ -66,6 +78,15 @@ ruleTester.run("require-strict-parsing", rule, {
         },
         {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', false);",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true);",
             errors: [
                 {
                     message: MESSAGE,
