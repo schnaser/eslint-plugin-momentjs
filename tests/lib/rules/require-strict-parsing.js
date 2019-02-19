@@ -30,6 +30,18 @@ ruleTester.run("require-strict-parsing", rule, {
         },
         {
             code: "moment.tz(timezone);"
+        },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY', true, MY_TIME_ZONE);"
+        },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY', true);"
+        },
+        {
+            code: "moment(aDateStringVariable, aFormatVariable, true);"
+        },
+        {
+            code: "moment(timezone);"
         }
     ],
 
@@ -63,6 +75,24 @@ ruleTester.run("require-strict-parsing", rule, {
         },
         {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY');",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY', false);",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY');",
             errors: [
                 {
                     message: MESSAGE,

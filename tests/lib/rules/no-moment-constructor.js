@@ -8,7 +8,7 @@ let rule = require("../../../lib/rules/no-moment-constructor"),
 
     RuleTester = require("eslint").RuleTester;
 
-const MESSAGE = "When creating moment instances, use moment-timezone constructor (moment.tz) over the moment only constructor.";
+const MESSAGE = "When creating moment instances, use moment-timezone or moment-utc constructor (moment.tz / moment.utc) over the moment only constructor.";
 
 //------------------------------------------------------------------------------
 // Tests
@@ -25,6 +25,9 @@ ruleTester.run("no-moment-constructor", rule, {
             code: "moment.tz(USER_TIME_ZONE, input)"
         },
         {
+            code: "moment.utc()"
+        },
+        {
             code: "something()"
         }
     ],
@@ -32,15 +35,6 @@ ruleTester.run("no-moment-constructor", rule, {
     invalid: [
         {
             code: "moment()",
-            errors: [
-                {
-                    message: MESSAGE,
-                    type: "CallExpression"
-                }
-            ]
-        },
-        {
-            code: "moment(   )",
             errors: [
                 {
                     message: MESSAGE,

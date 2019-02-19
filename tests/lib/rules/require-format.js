@@ -30,6 +30,15 @@ ruleTester.run("require-format", rule, {
         {
             code: "moment.tz('01/12/2018', DATE_FORMAT);"
         },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY', true);"
+        },
+        {
+            code: "moment('01/12/2018', 'MM/DD/YYYY');"
+        },
+        {
+            code: "moment('01/12/2018', DATE_FORMAT);"
+        },
 
         // Constructing "now"
         {
@@ -70,18 +79,6 @@ ruleTester.run("require-format", rule, {
         },
         {
             code: "moment.tz(SomeObject.getTimeZoneForUser());"
-        },
-        {
-            code: "moment.tz(SomeObject.getTimeZoneForUser());"
-        },
-        {
-            code: "moment.tz();",
-            errors: [
-                {
-                    message: MESSAGE,
-                    type: "CallExpression"
-                }
-            ]
         }
     ],
 
@@ -106,6 +103,33 @@ ruleTester.run("require-format", rule, {
         },
         {
             code: "moment.tz(foo());",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment('01/12/2018');",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment(foo);",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
+            code: "moment(foo());",
             errors: [
                 {
                     message: MESSAGE,
