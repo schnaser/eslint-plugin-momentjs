@@ -1,6 +1,8 @@
-# eslint-moment
+# eslint-plugin-moment
 
 Moment.js code style rules. See the documentation in the docs/ folder for more information on the specific rules.
+
+Note: This project has no affiliation with the ESLint team or the Moment.js team.
 
 ## Installation
 
