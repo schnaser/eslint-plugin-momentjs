@@ -31,4 +31,9 @@ Configure the rules. [More information](https://eslint.org/docs/user-guide/confi
         "momentjs/some-other-rule": "error",
         ...
     }
-    
+
+#### Links
+
+[Project Home](https://github.com/schnaser/eslint-plugin-momentjs)
+[ESLint](http://eslint.org/)
+[Moment.js](https://momentjs.com/)
