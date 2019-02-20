@@ -89,6 +89,15 @@ ruleTester.run("require-timezone", rule, {
             ]
         },
         {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true, 'NotALegit/Timezone');",
+            errors: [
+                {
+                    message: MESSAGE,
+                    type: "CallExpression"
+                }
+            ]
+        },
+        {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true);",
             errors: [
                 {
