@@ -36,6 +36,18 @@ ruleTester.run("require-timezone", rule, {
         },
         {
             code: "moment.tz(aDateStringVariable, 'America/Chicago');"
+        },
+        {
+            code: "something()"
+        },
+        {
+            code: "something.else()"
+        },
+        {
+            code: "something.tz()"
+        },
+        {
+            code: "something.utc()"
         }
     ],
 

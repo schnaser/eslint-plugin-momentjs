@@ -46,6 +46,18 @@ ruleTester.run("require-strict-parsing", rule, {
         {
             code: "moment();"
         },
+        {
+            code: "something()"
+        },
+        {
+            code: "something.else()"
+        },
+        {
+            code: "something.tz()"
+        },
+        {
+            code: "something.utc()"
+        }
     ],
 
     invalid: [

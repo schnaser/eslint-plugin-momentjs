@@ -99,6 +99,12 @@ ruleTester.run("require-format", rule, {
         {
             code: "moment(string, format);"
         },
+        {
+            code: "something();"
+        },
+        {
+            code: "console.log('');"
+        }
     ],
 
     invalid: [
