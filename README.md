@@ -32,8 +32,10 @@ Configure the rules. [More information](https://eslint.org/docs/user-guide/confi
         ...
     }
 
-#### Links
+## Links
 
 [Project Home](https://github.com/schnaser/eslint-plugin-momentjs)
+
 [ESLint](http://eslint.org/)
+
 [Moment.js](https://momentjs.com/)
