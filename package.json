@@ -5,6 +5,10 @@
   "main": "lib/index.js",
   "author": "Mike Schnaser <mike@schnaser.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schnaser/eslint-plugin-momentjs"
+  },
   "directories": {
     "doc": "docs",
     "lib": "lib",
