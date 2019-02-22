@@ -23,10 +23,31 @@ ruleTester.run("require-timezone", rule, {
             code: "moment();"
         },
         {
+            code: "moment.tz(zone);"
+        },
+        {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', true, MY_TIME_ZONE);"
         },
         {
             code: "moment.tz('01/12/2018', 'MM/DD/YYYY', zone);"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.zone);"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.zone());"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.b.zone);"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.b.zone());"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.b.zone.c);"
+        },
+        {
+            code: "moment.tz('01/12/2018', 'MM/DD/YYYY', a.b.zone().c);"
         },
         {
             code: "moment.tz(aDateStringVariable, aFormatVariable, tz);"
