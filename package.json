@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-momentjs",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "ESLint rule plugin to enforce moment.js style",
   "main": "lib/index.js",
   "author": "Mike Schnaser <mike@schnaser.com>",
@@ -22,7 +22,7 @@
     "moment-timezone": "^0.5.23"
   },
   "devDependencies": {
-    "eslint": "^5.11.1"
+    "eslint": "^5.16.0"
   },
   "keywords": [
     "eslint",
